@@ -4,15 +4,39 @@
 }
 .accordion-trigger {
   margin: 0;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   display: block;
   background: #333;
   color: #fff;
   border-top: 1px solid #fff;
+  border-radius: 5px;
+  /* アレンジ */
+  display: flex; /* 要素を横に並べる */
+  align-items: center; /* テキストと画像を垂直方向に中央揃え */
+  justify-content: space-between;
 }
 .accordion-contents {
   margin: 0;
   padding: 10px;
   border: 1px solid #ccc;
   display: none;
+  border-radius: 5px;
+  /* うまく動かないアレンジ */
+  transition: max-height 0.3s ease; /* アニメーション設定 */
+}
+
+.country-img {
+  width: 20px;
+  height: 15px;
+  display: inline-block; /* インラインブロック要素に変更 */
+  margin-left: 10px; /* テキストと画像の間隔を調整 */
+  display: none;
+}
+
+.title {
+  text-align: center;
+}
+
+.text {
+  margin: 0;
 }

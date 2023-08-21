@@ -23,11 +23,21 @@
 
       const $target = e.currentTarget;
 
+      // nextElementSibling:クリックした次の要素を取ってくる
       const $content = $target.nextElementSibling;
+      const $img = $content.nextElementSibling;
       if ($content.style.display === "block") {
         $content.style.display = "none";
+        $img.style.display = "none";
+        // アレンジ　初期化ができない　initialを入れると白色になる。
+        $target.style.backgroundColor = "#333";
       } else {
         $content.style.display = "block";
+        $img.style.display = "block";
+        // うまく動かないアレンジ
+        $content.style.maxHeight = $content.scrollHeight + "px";
+        // アレンジ　クリックで色が変わる
+        $target.style.backgroundColor = "#FF6F61";
       }
     };
   }
