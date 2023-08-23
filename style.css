@@ -40,10 +40,15 @@
 }
 
 /* アクティブクラスを用意する */
-/* .accordion.is-active {
-  background-color: #ff6f61;
+.accordion-trigger .is-active {
+  display: block;
+  background-color: #FF6F61"
+}
+
+.accordion-trigger img .is-active {
+  opacity: 1;
 }
 
 .accordion.is-active.accordion-contents {
   display: block;
-} */
+}

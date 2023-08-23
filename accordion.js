@@ -34,11 +34,17 @@
       // nextElementSibling:クリックした次の要素(並列)を取ってくる
       // 「A○」の部分
       const $content = $target.nextElementSibling;
-      console.log($content);
       // getElementsByTagName：クリックしたタグの中（子要素）を持ってくる
       const $img = $target.getElementsByTagName("img")[0];
 
-      console.log($img);
+      // const $clickedElement =
+      //   document.getElementsByClassName("accordion-trigger")[0];
+      // const ACTIVE_CLASS = "is-active";
+      // if ($clickedElement.classList.contains(ACTIVE_CLASS)) {
+      //   $clickedElement.classList.remove(ACTIVE_CLASS);
+      // } else {
+      //   $clickedElement.classList.add(ACTIVE_CLASS);
+      // }
 
       if ($content.style.display === "block") {
         // 順番が変わるとうまく動かない
@@ -52,6 +58,21 @@
         $target.style.backgroundColor = "#FF6F61";
         $img.style.opacity = 1;
       }
+
+      console.log($img);
+
+      // if ($content.style.display === "block") {
+      //   // 順番が変わるとうまく動かない
+      //   $content.style.display = "none";
+      //   // アレンジクリックで色が変わる
+      //   $target.style.backgroundColor = "";
+      //   $img.style.opacity = 0;
+      // } else {
+      //   $content.style.display = "block";
+      //   // アレンジクリックで色が変わる
+      //   $target.style.backgroundColor = "#FF6F61";
+      //   $img.style.opacity = 1;
+      // }
     };
   }
 
