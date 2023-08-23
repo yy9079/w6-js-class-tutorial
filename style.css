@@ -40,7 +40,7 @@
 }
 
 /* アクティブクラスを用意する */
-.accordion-trigger .is-active {
+.accordion-trigger.is-active {
   display: block;
   background-color: #FF6F61"
 }
