@@ -21,8 +21,6 @@
   border: 1px solid #ccc;
   display: none;
   border-radius: 5px;
-  /* うまく動かないアレンジ */
-  transition: max-height 0.3s ease; /* アニメーション設定 */
 }
 
 .country-img {
@@ -30,7 +28,7 @@
   height: 15px;
   display: inline-block; /* インラインブロック要素に変更 */
   margin-left: 10px; /* テキストと画像の間隔を調整 */
-  display: none;
+  opacity: 0;
 }
 
 .title {
@@ -40,3 +38,12 @@
 .text {
   margin: 0;
 }
+
+/* アクティブクラスを用意する */
+/* .accordion.is-active {
+  background-color: #ff6f61;
+}
+
+.accordion.is-active.accordion-contents {
+  display: block;
+} */
