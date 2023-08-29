@@ -31,6 +31,13 @@
   opacity: 0;
 }
 
+.shape {
+  width: 20px;
+  height: 15px;
+  display: inline-block; /* インラインブロック要素に変更 */
+  margin-left: 10px; /* テキストと画像の間隔を調整 */
+}
+
 .title {
   text-align: center;
 }
@@ -39,16 +46,25 @@
   margin: 0;
 }
 
-/* アクティブクラスを用意する */
+/* アクティブクラスを用意する 1on1 課題*/
+
+/* Q1 問題文背景「is-active」 背景色・文字色変更 */
 .accordion-trigger.is-active {
-  display: block;
-  background-color: #FF6F61"
+  background: #ff6f61;
+  color: #333;
 }
 
-.accordion-trigger img .is-active {
+/* Q1 画像「is-active」　画像を表示（透明度１） */
+.accordion-trigger.is-active .country-img {
   opacity: 1;
 }
 
-.accordion.is-active.accordion-contents {
+/* A1 回答を表示「is-active」 */
+.accordion-contents.is-active {
   display: block;
+}
+
+/* ▼を「is-active」 */
+.accordion-trigger.is-active .shape {
+  transform: rotate(270deg);
 }

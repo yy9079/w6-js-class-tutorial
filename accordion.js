@@ -7,9 +7,6 @@
       const $elm = document.querySelector(obj.hookName);
       this.$trigger = $elm.getElementsByTagName(obj.tagName);
 
-      // console.log($elm);
-      // console.log($trigger);
-
       const triggerLen = this.$trigger.length;
       let index = 0;
       while (index < triggerLen) {
@@ -23,44 +20,31 @@
 
     // クリックしたら実行される処理
     // クラスの中で関数を書くときは、const不要なので消す
+
     clickHandler = (e) => {
       e.preventDefault();
 
-      // クリックされた要素のこと
-      const $target = e.currentTarget;
-
-      console.log($target);
-
-      // nextElementSibling:クリックした次の要素(並列)を取ってくる
-      // 「A○」の部分
-      const $content = $target.nextElementSibling;
+      const $target = e.currentTarget; //クリックされた要素
+      const $content = $target.nextElementSibling; //クリックした次の要素accordion-contents
       // getElementsByTagName：クリックしたタグの中（子要素）を持ってくる
       const $img = $target.getElementsByTagName("img")[0];
+      const $shape = $target.getElementsByTagName("div")[0];
 
-      // const $clickedElement =
-      //   document.getElementsByClassName("accordion-trigger")[0];
-      // const ACTIVE_CLASS = "is-active";
-      // if ($clickedElement.classList.contains(ACTIVE_CLASS)) {
-      //   $clickedElement.classList.remove(ACTIVE_CLASS);
-      // } else {
-      //   $clickedElement.classList.add(ACTIVE_CLASS);
-      // }
+      const ACTIVE_CLASS = "is-active";
 
-      if ($content.style.display === "block") {
-        // 順番が変わるとうまく動かない
-        $content.style.display = "none";
-        // アレンジクリックで色が変わる
-        $target.style.backgroundColor = "";
-        $img.style.opacity = 0;
+      if ($target.classList.contains(ACTIVE_CLASS)) {
+        $target.classList.remove(ACTIVE_CLASS);
+        $content.classList.remove(ACTIVE_CLASS);
+        $img.classList.remove(ACTIVE_CLASS);
+        $shape.classList.remove(ACTIVE_CLASS);
       } else {
-        $content.style.display = "block";
-        // アレンジクリックで色が変わる
-        $target.style.backgroundColor = "#FF6F61";
-        $img.style.opacity = 1;
+        $target.classList.add(ACTIVE_CLASS);
+        $content.classList.add(ACTIVE_CLASS);
+        $img.classList.add(ACTIVE_CLASS);
+        $shape.classList.add(ACTIVE_CLASS);
       }
 
-      console.log($img);
-
+      // // **正しく動くコード（1on1終了時点）
       // if ($content.style.display === "block") {
       //   // 順番が変わるとうまく動かない
       //   $content.style.display = "none";
@@ -76,38 +60,11 @@
     };
   }
 
-  // lickHandler = (e) => {
-  //   e.preventDefault();
-
-  //   const $target = e.currentTarget;
-  //   console.log($target);
-
-  //   // nextElementSibling:クリックした次の要素を取ってくる
-  //   const $content = $target.nextElementSibling;
-  //   console.log(this.$trigger);
-  //   const $img = $target.getElementsByTagName("img")[0];
-  //   console.log($img[0]);
-
-  //   if ($content.style.display === "block") {
-  //     $content.style.display = "none";
-  //     $img.style.opacity = 0;
-  //     // ＊＊＊アレンジ　初期化ができない　initialを入れると白色になる。
-  //     $target.style.backgroundColor = "";
-  //   } else {
-  //     $content.style.display = "block";
-  //     // $img.style.display = "block";
-  //     // アレンジ　クリックで色が変わる
-  //     $target.style.backgroundColor = "#FF6F61";
-  //     $img.style.opacity = 1;
-  //   }
-  // };
-
-  // インスタンスを生成 生成するときは変数を必ず指定する
-  //ここでid、タグを変えられる→constructorで呼び出す
+  // インスタンスを生成 生成するときは変数を必ず指定する　ここでid、タグを変えられる→constructorで呼び出す
 
   const fuckingAccordion = new Accordion({
     hookName: "#js-faq",
-    tagName: "p",
+    tagName: "ul",
   });
 
   const dummyAccordion = new Accordion({
